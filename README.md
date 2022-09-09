@@ -5,3 +5,4 @@ I should go back to the book/rustlings after this though.
 
 Changelog:
 - 23/08/2022: First commit
+- 09/09/2022: Put image color data per pixel in a vector. Then convert those to a single value and move inside the vector that will be used for generating the ASCII image.
