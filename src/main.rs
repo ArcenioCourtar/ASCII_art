@@ -1,23 +1,39 @@
 #![allow(non_snake_case)] // because the crate/binary name is not in snake case, and I want ASCII in all caps. :(
 
 use image::GenericImageView;
+use image::imageops::FilterType;
+use native_dialog::{FileDialog, MessageDialog, MessageType};
 
 fn main() {
 	// Open the image
-	// TODO: let user select image to open
-	let img = match image::open("./images/my_github_avatar.jpg") {
+	let path = FileDialog::new()
+	.set_location("~/Desktop")
+	.show_open_single_file()
+	.unwrap();
+
+	let path = match path {
+        Some(path) => path,
+        None => return,
+    };
+
+	let mut img = match image::open(path) {
 		Ok(image) => image,
 		Err(error) => panic!("Problem opening file: {:?}", error),
 	};
 
 	// save dimensions and color values. Then convert them to a single value to generate ASCII art.
-	// TODO: automatically resize large images so the ASCII art always fits in the terminal.
-	let dimensions = img.dimensions();
+	let mut dimensions = img.dimensions();
+	// resize image if it's dimensions exceed a certain boundary
+	if dimensions.0 > 30 {
+		img = img.resize(30, 30, FilterType::Gaussian);
+		dimensions = (30, 30);
+	}
 	let byte_values: Vec<u8> = img.into_bytes();
 	let mut recalc_values: Vec<u8> = Vec::new();
 	let mut count = 0;
-	// TODO: use a for loop and StepBy() to iterate over the correct elements instead of using count += 3.
-	// TODO: add multiple ways to calculate final value
+	// TODO: use a for loop to iterate over the correct elements instead of using count += 3.
+	// TODO: add multiple ways to calculate values for recalc_values
+
 	while count < byte_values.len() {
 		recalc_values.push(
 			((byte_values[count as usize] as u32
