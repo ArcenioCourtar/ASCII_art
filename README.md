@@ -10,12 +10,12 @@ TODO:
 - [x] Print ASCII art in the terminal based on the input image. Print an error message and panic!🦀 if the image can't be found.
 * Usability/Customizability
 - [x] Make characters used modifyable
-	- [] Change default list to something more readable
-	- [] Let the user define a character list in a separate .txt file or command line args
-- [] Resize image automatically when exceeding a certain size
-	- [] Let the user define resize boundary through command line args
-- [] Let the user select an image upon running the program, instead of hardcoding the image to be selected
-- [] Add multiple ways to recalculate brightness/color values
+	- [ ] Change default list to something more readable
+	- [ ] Let the user define a character list in a separate .txt file or command line args
+- [ ] Resize image automatically when exceeding a certain size
+	- [ ] Let the user define resize boundary through command line args
+- [ ] Let the user select an image upon running the program, instead of hardcoding the image to be selected
+- [ ] Add multiple ways to recalculate brightness/color values
 
 Changelog:
 - 23/08/2022: 
