@@ -3,6 +3,7 @@
 ###### This time around it's a program that prints ASCII art in the terminal based on an image you give
 ---
 manual will be written when I've added more features! Currently it just opens `my_github_avatar.jpg` stored in the `images` folder and prints an ASCII art equivalent.
+
 ---
 TODO:
 * Core feature
