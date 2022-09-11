@@ -5,8 +5,10 @@
 manual:
 
 This program lets you select an image through your OS' file dialog and prints an ASCII_art equivalent in the terminal/console. 
+
 You can change the symbols used to generate the art in `symbol_set.txt` found in the `resources` folder (left for "darker" spots and right for "brighter" spots). In case of an empty `symbol_set.txt`, or the file not being found, defaults to a hardcoded symbol set.
 This is important when you want to convert images with less color variety, like images of cartoons/anime. 
+
 Currently resizes images with a pixel width higher than 100 down to a width of 100, retaining aspect ratio. Will add feature to change this value with command line args.
 
 ---
